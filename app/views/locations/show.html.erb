@@ -1,5 +1,5 @@
 <div class="movie clearfix">
-  <%= image_tag @location.movie.poster_url, :class => "poster" %>
+  <%= image_tag poster_movie_url(@location.movie), :class => "poster" %>
   <div class="summary">
   <h2><%= @location.movie.title %> <span class="year"><%= @location.movie.year %> </span></h2>
   <div><strong>Address:</strong> <%= @location.full_street_address %></div>
