@@ -8,5 +8,16 @@
   rake db:drop db:create db:migrate db:seed
 
 
+== Features
+  Automatic download and seeding of the database
+  Clustering of markers to avoid noise at certain zoom levels
+  Movie name on hover
+  Instant search with prefetch of all movies and directors from the database
+  Note: The dataset is pretty small so I chose to have all the data (~90K) saved in memory for immediate searches
+  Filter markers by Director, Movie or Production Company
+  Detailed Popup with CSS3 Animation
 
 
+== TODO
+  Some data fail to geocode
+  Some markers have the same Coordinates so we would need a selector to be able to determine which one you want to click on.
