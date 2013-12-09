@@ -12,6 +12,14 @@ class MoviesController < ApplicationController
   def show
   end
 
+  def poster
+    @movie = Movie.find(params[:id])
+    require 'open-uri'
+    open(@movie.poster_url) do |f|
+      send_data f.read, :type => "image/jpeg", :disposition => "inline"
+    end
+  end
+
   # GET /movies/new
   def new
     @movie = Movie.new

@@ -16,6 +16,7 @@
   Note: The dataset is pretty small so I chose to have all the data (~90K) saved in memory for immediate searches
   Filter markers by Director, Movie or Production Company
   Detailed Popup with CSS3 Animation
+  Poster Image bypass hotlinking from IMDB (This is bad practice but it's easier for the purpose of the exercice, this way I don't have to store the images)
 
 
 == TODO

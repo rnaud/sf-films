@@ -1,7 +1,11 @@
 UberSfFilms::Application.routes.draw do
   resources :locations
 
-  resources :movies
+  resources :movies do 
+    member do
+      get :poster
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
