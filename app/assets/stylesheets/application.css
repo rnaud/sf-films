@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+html,body {height: 100%; padding: 0; margin: 0; position: relative; font-family: Helvetica, Arial;}
+
+header {z-index: 10;position: fixed; top: 0; left: 0; width: 100%; height: 44px;background-color: white; padding: 3px 20px; box-sizing: border-box;}
+header h1 {line-height: 38px; font-size: 20px; margin: 0; display: inline-block; float: left; margin-right: 15px;}
+#search, .tt-query, .tt-hint {
+  width: 396px;
+  height: 18px;
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 18px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
+
+}
+
+#search:focus {
+  border: 2px solid #0097cf;
+}
+
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-dropdown-menu {
+  width: 422px;
+  margin-top: 8px;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+
+#map-container, #map {width: 100%; height: 100%; margin-top: 44px;} 
+#infoWindow {position: fixed; bottom: 10px; left:10px; background: white; padding: 10px 14px; font-size: 18px; 
+transition: all .3s ease-out;
+-webkit-transition: all .3s ease-out; 
+opacity: 0;
+transform: translate(0,100px);
+-ms-transform: translate(0,100px);
+-webkit-transform: translate(0,100px);
+}
+
+#infoWindow.active {opacity: 1; 
+transform: translate(0,0);
+-ms-transform: translate(0,0);
+-webkit-transform: translate(0,0);}
+
+#infoWindow .address {
+  font-size: 10px;
+  display: block;
+}
+
+
+
+.movie .summary {width: 60%; padding-left: 20px; box-sizing: border-box; float: left;}
+.movie .poster {float: left; width: 40%;}
+.movie .year {font-size: 12px; color: #bbb;}
+.movie ul {margin-left: 15px;}
+
+
+#popup-template {display: none;}
+
+.pop-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: 630px;
+  min-width: 320px;
+  height: auto;
+  z-index: 2000;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -webkit-perspective: 1300px;
+  -moz-perspective: 1300px;
+  perspective: 1300px;
+  max-height: 80%;
+  overflow: scroll;
+}
+
+  .pop-modal.show {
+  visibility: visible;
+  }
+
+  #search-wrapper {position: relative; display: inline-block;}
+  span.pop-close, #disable-filter {position: absolute; top: 10px; right: 10px; font-weight: 800; font-size: 20px; color: #ccc; cursor: pointer;}
+  span.pop-close:hover {background: none; color: #444;}
+
+  #disable-filter {position: absolute; top: 0px; right: 7px; height: 12px; line-height: 14px; 
+     color: #444; font-size: 20px;  cursor: pointer; padding: 10px; z-index: 20;}
+
+.pop-modal .pop-content {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(-70deg);
+  -moz-transform: rotateX(-70deg);
+  -ms-transform: rotateX(-70deg);
+  transform: rotateX(-70deg);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pop-modal.show .pop-content {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

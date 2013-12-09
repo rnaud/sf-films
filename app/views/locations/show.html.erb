@@ -1,0 +1,32 @@
+<div class="movie clearfix">
+  <%= image_tag @location.movie.poster_url, :class => "poster" %>
+  <div class="summary">
+  <h2><%= @location.movie.title %> <span class="year"><%= @location.movie.year %> </span></h2>
+  <div><strong>Address:</strong> <%= @location.full_street_address %></div>
+  <div><strong>IMDB Rating:</strong> <%= @location.movie.imdb_rating%></div>
+  <div><strong>IMDB Link:</strong> <%= link_to "Check on IMDB", "http://www.imdb.com/title/#{@location.movie.imdb_id}/", :target => "_blank"  %></div>
+  <div><strong>Plot:</strong> <%= @location.movie.plot %></div>
+  <div><strong>Production Company:</strong> <%= @location.movie.producer.name %></div>
+  <div><strong>Director:</strong> <%= @location.movie.director.name %></div>
+
+
+  <div><strong>Actors:</strong>
+    <ul>
+      <% @location.movie.actors.each do |a| %>
+        <li><%= a %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <div class="other locations">
+    <strong>All filming locations</strong> - <%= link_to "Filter on Map", locations_path(:movie_id => @location.movie.id, :format => :json), :class => "filter-movie filter pop-close", :"data-title" => @location.movie.title %>
+    <ul>
+      <% @other_locations.each do |loc| %>
+        <li><%= loc.full_street_address %></li>
+      <% end %>
+    </ul>
+  </div>
+  </div>
+</div>
+

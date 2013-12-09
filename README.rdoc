@@ -1,0 +1,12 @@
+=== SF Films Database
+
+
+== Install
+
+  clone repository
+  bundle install
+  rake db:drop db:create db:migrate db:seed
+
+
+
+

@@ -1,0 +1,16 @@
+common: &common
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+
+development:
+  <<: *common
+  database: uber_sf_films_dev
+
+test:
+  <<: *common
+  database: uber_sf_films_test
+
+production:
+  <<: *common
+  database: uber_sf_films_prod
